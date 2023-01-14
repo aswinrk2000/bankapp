@@ -1,0 +1,179 @@
+data binding in angular
+--------------------------
+
+ts-component
+html-view
+
+1-one way binding (ts to html)
+    1.1 component to view
+       1.1.1 string interpolation  {{}}
+       1.1.2 property binding      [property]="value"
+
+    1.2 view to component (html to ts)
+       
+       1.2.1 event binding                (eventname)="method name()"
+       1.2.2 event binding using $event   (eventname)="methodname($event)"
+       1.2.3 event binding using template rendering variable  #variable
+       
+2-Two way binding
+
+   2.1 ngmodel    [(ngmodel)]="value" 
+                  FormsModule
+
+ Redirection in angular
+ ------------------------
+
+ navigateByUrl     -method used for Redirection      
+
+ Router            - class which contains the method navigateByUrl   
+
+ AppRoutingModule   -module of Router        
+
+Dependency Injection
+---------------------
+-to use a method of a class in another class
+
+-in constructor
+-steps           access pecifier - public/private
+                 variable
+                 class name
+                         syntax;    private variable:classname
+
+ Angular services
+ -----------------
+
+ ng g s servicename      
+
+ Angular directives - to manage DOM in Angular
+ --------------------
+
+ 1.structural directives- to handle structured datas(collections i.e,arrays,objects) in view(html) of a component 
+
+      -ngFor   -can directly apply in html to access elements from array    
+
+      -ngIf    -to check a conditon in html
+
+ 2.Component directive
+
+ 3.Attribute directive - to apply  attributes to DOM
+                         
+                          - [ngClass]
+
+
+ Form Validation in Angular
+ ---------------------------
+
+ we can create forms in two ways
+       1.Template Driven Form  
+
+       2.Model Driven Form    
+
+            -Reactive Form
+            ---------------
+
+            ReactiveFormsModule -Module used to create model forms
+
+            FormBuilder         -class of ReactiveFormsModule
+
+                        -group,array,control
+
+       Validate Model Form
+       ---------------------
+
+       Validator - a class in angular it includes methods for apply Validation
+
+       -access errors in validator rule 
+
+            this.registerForm.get('uname')?.errors
+
+                         -valid     -empty response
+                         -invalid   -there will be a content             
+
+                         if(this.registerForm.get('uname')?.error){        //*ngIf
+
+
+                         }
+
+
+Local storage in Angular
+--------------------------
+
+-store     : localStorage.setItem()
+-access    : localStorage.getItem()
+-delete    : localStorage.removeItem()
+
+
+Parent Child Components communication in Angular
+-------------------------------------------------
+
+@Input - parent to child data sharing
+
+@Output - child to parent data sharing
+
+datas only shared via selector of component
+
+User Defined Event Creation In Angular
+---------------------------------------
+
+EventEmitter (angular core)   - class used to craete events
+emit()                        - to start the event
+
+              
+ Date in Angular
+ ----------------
+
+ Date  - class
+
+ -create an object of class Date to access Date and Time      
+
+
+Angular Pipe
+-------------
+
+to transform datas into another format
+eg - date Pipe
+
+
+CLIENT SERVER INTEGRATION
+-------------------------
+-------------------------
+
+http request Creation
+---------------------
+
+HttpClientModule   - module used to create http request
+HttpClient         - class
+
+
+
+Asynchronous request in TS
+--------------------------
+
+js - promise  -- resolve then()
+              -- reject  catch()
+
+
+ ts - observable -- resolve  subscribe()
+                 -- reject    catch
+
+  Rxjs   - library used to solve asynchronous code in ts
+
+  (Rxjs - reactive Extension for js)  
+
+
+  Append token in headers of http request
+  ---------------------------------------
+
+  create headers
+
+     HttpHeaders  - class used to create header object
+
+     let headers=new HttpHeaders()
+
+    append token in header object
+
+    headers.append('access-token',token)
+
+
+
+

@@ -1,0 +1,21 @@
+<div>
+    <h1 class="ms-2 p-3"  style="color: gold;">{{aim}}</h1>
+</div>
+
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+
+    <div class="container w-25 border border-dark mt-5 p-3" style="border-radius: 17px; height: 330px; background-color: rgba(255, 217, 0, 0.411);">
+        <h1 class="text-center mt-3 text-white" >Login page</h1>
+        <input id="acid"  name="acno" formControlName="acno"  class="form-control mt-4" type="text" [placeholder]="data">
+        <p class="text-danger" *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">invalid acno</p>
+
+
+        <input id="pid"  name="psw" formControlName="psw"  class="form-control mt-4" type="password" placeholder="password">
+        <p class="text-danger" *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">invalid password</p>
+
+        <button type="submit"   class="btn btn-warning mt-4 text-white" style="margin-left: 40%;">login</button>
+        <div class="mt-2 p-2 text-center">
+            <p class="text-white">new user <a style="color:rgb(9, 61, 173);" routerLink="register">register here</a></p>
+        </div>
+    </div>
+</form>
